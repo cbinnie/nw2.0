@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour {
     private ArrayList tiles;
     private GameObject currentPlayer;
     private GameObject board;
+    public GameObject UI;
     private int turnCounter = 0;
-
+    private int currentRoll = 0;
 
     // Use this for initialization
     void Start () {
@@ -20,4 +21,10 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void getRoll()
+    {
+        currentRoll = Random.Range(1, 6);
+        UI.SendMessage("setRoll", currentRoll);
+    }
 }
