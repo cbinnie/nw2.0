@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public GameObject rollUI;
     private int turnCounter = 0;
     private int currentRoll = 0;
+    public int rollRange = 3;
 
     // Use this for initialization
     void Start () {
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour {
 
     public void getRoll()
     {
-        currentRoll = Random.Range(1, 6);
+        currentRoll = Random.Range(1, rollRange);
         rollUI.SendMessage("setRoll", currentRoll);
         movePlayer(currentPlayer, currentRoll);
     }
